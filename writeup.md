@@ -24,15 +24,12 @@ The goals / steps of this project are the following:
 [video1]: ./project_video.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
-###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
+### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
 ---
-###Writeup / README
+### Histogram of Oriented Gradients (HOG)
 
-
-###Histogram of Oriented Gradients (HOG)
-
-####1. Explain how (and identify where in your code) you extracted HOG features from the training images.
+#### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
 The code for this step is contained in the sixth and seventh code cells of the IPython notebook.
 
@@ -48,13 +45,13 @@ Here is an example using the `YCrCb` color space and HOG parameters of `orientat
 
 ![alt text][image2]
 
-####2. Explain how you settled on your final choice of HOG parameters.
+#### 2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of parameters. For the HOG parameters, the combination of `YCrCb`, `orientations=9`, `pixels_per_cell=(8,8)`, and `cells_per_block=(2,2)` gives a nice result in the SVM training score. Besides HOG features, I alse concatenate the color histogram feature and original pixel values to the feature set. My experimental result indicates "HLS" gives the best result becuase the vehicle color satuation is separated in the "L" channel. To reduce the size of feature set for speed up traning, I resize each training picture to 16x16 in the SVM training step. You can find this step at ninth code block in the Ipython Notebook.
+I tried various combinations of parameters. For the HOG parameters, the combination of `YCrCb`, `orientations=9`, `pixels_per_cell=(8,8)`, and `cells_per_block=(2,2)` gives a nice result in the SVM training score. Besides HOG features, I alse concatenate the color histogram feature and original pixel values to the feature set. My experimental result indicates "HLS" gives the best result becuase the vehicle color satuation is separated in the "L" channel. To reduce the size of feature set for speed up traning, I resize each training picture to 16x16 in the SVM training step. You can find this step at the ninth code block in the Ipython Notebook.
 
-####3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
+#### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using color features and HOG features. 
+I trained a linear SVM using color features and HOG features. The code is in the ninth code block in the Ipython Notebook.
 
 ###Sliding Window Search
 
