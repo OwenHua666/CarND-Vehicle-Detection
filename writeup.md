@@ -23,9 +23,6 @@ The goals / steps of this project are the following:
 [image7]: ./examples/output_bboxes.png
 [video1]: ./project_video.mp4
 
-## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
-### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
-
 ---
 ### Histogram of Oriented Gradients (HOG)
 
@@ -51,7 +48,7 @@ I tried various combinations of parameters. For the HOG parameters, the combinat
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using color features and HOG features. The code is in the ninth code block in the Ipython Notebook. I first extracted color features and hog features from "car" pictures and "notcar" pictures using the parameters obtained from the experiment and function written before. Then, I stacked the features together and used "StandardScaler()" from Sklearn package to normalize the extracted features. I also splited the data into training set and validation set and shuffle them. After this, I used GridSearchCV to find the best parameter combination used for SVM (Kernel:'linear', C:0.1). aFTER, I trained the SVM using training dataset and validate my SVM using the validation dataset. The final score obtained by this linear SVM model is 
+I trained a linear SVM using color features and HOG features. The code is in the ninth code block in the Ipython Notebook. I first extracted color features and hog features from "car" pictures and "notcar" pictures using the parameters obtained from the experiment and function written before. Then, I stacked the features together and used "StandardScaler()" from Sklearn package to normalize the extracted features. I also splited the data into training set and validation set and shuffle them. After this, I used GridSearchCV to find the best parameter combination used for SVM (Kernel:'linear', C:0.1). aFTER, I trained the SVM using training dataset and validate my SVM using the validation dataset. The final score obtained by this linear SVM model is 0.998.
 
 ###Sliding Window Search
 
