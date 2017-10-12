@@ -16,6 +16,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 [image1]: ./examples/car_not_car.png
 [image2]: ./examples/HOG_feature.png
+[image11]: ./examples/HOG_feature_notcar.png
 [image3]: ./examples/sliding_window.png
 [image4]: ./examples/sliding_window_search_result.png
 [image5]: ./examples/bboxes_and_heat_1.png
@@ -42,6 +43,7 @@ I then explored different color spaces and different `skimage.hog()` parameters 
 Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
 
 ![alt text][image2]
+![alt text][image11]
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
@@ -53,12 +55,9 @@ I trained a linear SVM using color features and HOG features. The code is in the
 
 ### Sliding Window Search
 
-####1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
+#### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-I decided to search random window positions at random scales all over the image and came up with this. 
-### Show Image
 I use different sliding window sizes and manually choose them based on the rule that the far windows should be smaller than the closer windows. I use sizes of the cars in the test image as the reference when choosing the window size. 
-### Show Image
 
 ![alt text][image3]
 
@@ -81,17 +80,17 @@ I recorded the positions of positive detections in each frame of the video.  Fro
 
 Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
 
-### Here are 4 frames and their corresponding heatmaps:
+##### Here are 4 frames and their corresponding heatmaps:
 
 ![alt text][image5]
 ![alt text][image8]
 ![alt text][image9]
 ![alt text][image10]
 
-### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
+##### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
 ![alt text][image6]
 
-### Here the resulting bounding boxes are drawn onto the last frame in the series:
+##### Here the resulting bounding boxes are drawn onto the last frame in the series:
 ![alt text][image7]
 
 ---
