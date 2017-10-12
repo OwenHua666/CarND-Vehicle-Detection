@@ -72,7 +72,7 @@ Ultimately I searched using YCrCb 3-channel HOG features plus spatially binned c
 ### Video Implementation
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./output_videos/project_video_output.mp4)
 
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
@@ -93,8 +93,6 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 ### Here the resulting bounding boxes are drawn onto the last frame in the series:
 ![alt text][image7]
-
-
 
 ---
 
