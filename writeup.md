@@ -104,3 +104,8 @@ One thing I can improve here is the label function. When two vehicle overide eac
 Another thing there is the sliding window part, I think I can scale the window using a coefficient which is proportional to the distance from possible vehicle positions to the image bottom line.
 I am improving my advanced lane detection pipeline. If I can get the revised version work, I will add the lane line and predicted curvature to this project.
 
+### Acknowledgement 
+* Udacity Self-Driving Car Nano Degree
+* GTI vehicle image database
+* KITTI vision benchmark suite
+* Udacity dataset
