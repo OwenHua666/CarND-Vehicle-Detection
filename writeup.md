@@ -98,6 +98,8 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-## My discussion
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+I used color feature and gradient feature(HOG) to train a SVM model to detect vehicles. I generated sliding windows of different size to capture vehicle pixels in each video image. I used heat map, a threshold, and a consecutive serie of images to eliminate false positive. I used sklean.label to separate vehicles and remove duplicates. 
+One thing I can improve here is the label function. When two vehicle overide each other, the current algorithm won't be able to distinguish them. I think I might include a vehicle locking mechanism and train the svm to know this situation. 
+Another thing there is the sliding window part, I think I can scale the window using a coefficient which is proportional to the distance from possible vehicle positions to the image bottom line.
+I am improving my advanced lane detection pipeline. If I can get the revised version work, I will add the lane line and predicted curvature to this project.
 
